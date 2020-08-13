@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Chocolate.Models.FlavoursDetail>
+@{
+    ViewData["Title"] = "List";
+}
+
+<h2>Flavours List</h2>
+<table>
+    <tr>
+        <td class="col-sm-2">
+            @*@Html.DisplayNameFor(title => Model.FirstOrDefault().Title)*@
+            <label asp-for="FirstOrDefault().Title"></label>
+        </td>
+        <td class="col-sm-2">
+            @*@Html.DisplayNameFor(product => Model.FirstOrDefault().Product)*@
+            <label asp-for="FirstOrDefault().Product"></label>
+        </td>
+        <td class="col-sm-2">
+            @*@Html.DisplayNameFor(price => Model.FirstOrDefault().Price)*@
+            <label asp-for="FirstOrDefault().Price"></label>
+
+        </td>
+    </tr>
+
+    @foreach (var flavoursDetail in Model)
+    {
+        <tr>
+            <td class="col-sm-2">
+                @*@Html.DisplayFor(title => flavoursDetail.Title)*@
+                @flavoursDetail.Title
+            </td>
+            <td class="col-sm-2">
+                @*@Html.DisplayFor(title => flavoursDetail.Product)*@
+                @flavoursDetail.Product
+            </td>
+            <td class="col-sm-2">
+                @*@Html.DisplayFor(title => flavoursDetail.Price)*@
+                @flavoursDetail.Price
+            </td>
+            <td class="col-sm-2">
+                <a asp-action="FlavoursDetail" asp-route-id="@flavoursDetail.Id"> Details </a>
+                <a asp-action="Edit" asp-route-id="@flavoursDetail.Id"> Edit </a>
+                <a asp-controller="Flavours" asp-action="Delete" asp-route-id="@flavoursDetail.Id"> Delete </a>
+            </td>
+        </tr>
+
+    }
+</table>
+<div>
+     <a asp-action="Add">Add New Flavour</a>
+</div>
