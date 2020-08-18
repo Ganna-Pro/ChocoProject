@@ -15,14 +15,25 @@ namespace Chocolate.Models
     public class FlavoursDetail
     {
         public int Id { get; set; }
+
         [Display(Name = "Flavour")]
         public string Title { get; set; }
+
         [Display(Name = "Product Description")]
         public productDescription Product { get; set; }
+
         [Display(Name = "Price for each")]
         public decimal Price { get; set; }
 
-        
+        public FlavoursDetail(string name, int price)
+        {
+            Title = name;
+            Price = price;
+        }
+
+        public FlavoursDetail()
+        {
+        }
     }
 
     
