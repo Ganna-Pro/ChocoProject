@@ -12,10 +12,12 @@ namespace Chocolate.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IFlavourRepository _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IFlavourRepository context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -25,6 +27,7 @@ namespace Chocolate.Controllers
 
         public IActionResult Privacy()
         {
+            _context.Add(new Flavours("Blosom", 2));
             return View();
         }
 

@@ -28,6 +28,7 @@ namespace Chocolate
             services.AddControllersWithViews();
             services.AddDbContextPool<AppDBContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("FlavoursDBConnection")));
+            services.AddScoped<IFlavourRepository, FlavoursRepositary>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -13,6 +13,7 @@ namespace Chocolate.Models
 
         }
 
-        public DBSet<FlavoursDetail> FlavoursDetails { get; set; }
+        public DBSet<Flavours> Flavours { get; set; }
+        
     }
 }
