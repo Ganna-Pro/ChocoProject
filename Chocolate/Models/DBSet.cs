@@ -2,7 +2,7 @@
 
 namespace Chocolate.Models
 {
-    public class DBSet<T>
+    public class DBSet<Flavours>
     {
         internal object Delete(int id)
         {

@@ -1,4 +1,5 @@
 ﻿using Chocolate.Models;
+using Chocolate.Models.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,10 @@ namespace Chocolate.Controllers
 
     public class FlavoursController : Controller
     {
+        public FlavoursController(ShoppingCartService shoppingCartService)
+        {
+
+        }
         private object productDescription;
 
         private static List<FlavoursDetail> _flavoursList;
